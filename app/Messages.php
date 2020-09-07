@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Messages extends Model
 {
     protected $guarded = ['id'];
-    /**
-     * @var mixed
-     */
-    private $from_id;
 
     public function from()
     {
