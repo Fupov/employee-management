@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
         $user=User::create([
             'name'=>'User',
             'prenom'=>'Account',
-            'departement_id'=> 19,
+            'departement_id'=> 2,
             'phone'=>'0636728123',
             'email'=>'user@anapec.com',
             'password'=>Hash::make('password')
