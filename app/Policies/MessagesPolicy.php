@@ -23,7 +23,6 @@ class MessagesPolicy
      */
     public function viewAny(User $user)
     {
-
     }
 
     /**
@@ -35,7 +34,7 @@ class MessagesPolicy
      */
     public function view(User $user, Messages $messages)
     {
-        return $user->id === $messages->from_id;
+        return $user->id === $messages->to_id;
     }
 
     /**
