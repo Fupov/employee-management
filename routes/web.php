@@ -21,8 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/emails/home', 'Admin\EmailsController@home')->name('emails');
-
+Route::get('/emails/sent', 'Admin\EmailsController@sent')->name('emails');
 Route::resource('/admin/users','Admin\UsersController');
-Route::resource('/admin/profiles','Admin\ProfilesController');
 Route::resource('/admin/emails','Admin\EmailsController');
 

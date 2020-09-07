@@ -30,6 +30,13 @@ class EmailsController extends Controller
             'messages' => $messages
         ]);
     }
+    public function sent()
+    {
+        $messages = Messages::all()->sortByDesc('created_at');
+        return view('admin.emails.sent', [
+            'messages' => $messages
+        ]);
+    }
     public function home()
     {
         return view('admin.emails.home');

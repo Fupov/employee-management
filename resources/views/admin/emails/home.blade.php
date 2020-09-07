@@ -14,7 +14,8 @@
                             </div>
                         @endif
                         <a href="{{ route('emails.index') }}" class="btn btn-link btn-lg btn-block"> Boite des Courriels </a>
-                        <a href="{{ route('emails.create') }}"  class="btn btn-link btn-lg btn-block">Nouveau Courriel</a>
+                            <a href="{{ url('/emails/sent') }}" class="btn btn-link btn-lg btn-block">Courriels Envoyées</a>
+                            <a href="{{ route('emails.create') }}"  class="btn btn-link btn-lg btn-block">Nouveau Courriel</a>
                     </div>
                 </div>
             </div>

@@ -38,7 +38,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->HasRole('Chef de division');
         }
         );
-
+        Gate::define('show-messages',function (User $user,Messages $messages){
+             return $user->id === $messages->from_id;
+        }
+        );
 
     }
 }
