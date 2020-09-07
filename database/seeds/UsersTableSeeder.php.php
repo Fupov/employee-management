@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         $admin=User::create([
             'name'=>'Admin',
             'prenom'=>'Account',
-            'departement_id' => 20,
+            'departement_id' => 1,
             'phone'=>'0624330725',
             'email'=>'admin@anapec.com',
             'password'=>Hash::make('password')
