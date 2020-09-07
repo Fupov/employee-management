@@ -19,6 +19,8 @@
                             <tbody>
                             @foreach($messages as $message)
                                 @can('view', $message)
+
+
                                 <tr>
                                     <th scope="row"> {{$message->id}} </th>
                                     <td>{{$message->from->email}}</td>
@@ -26,11 +28,15 @@
                                     <td>{{$message->created_at}}</td>
                                     <td>
                                         <a href="{{route('emails.show',$message->id)}}"><button type="button" class="btn btn-outline-info float-left" >Afficher</button></a>
-                                        <a href="{{route('emails.edit',$message->id)}}"><button type="button" class="btn btn-outline-info float-left" >Modifier</button></a>
-                                        <form action="{{route('emails.destroy',$message->id)}}" method="post" class="float-left">
+                                        @can('update', $message)
+                                            <a href="{{route('emails.edit',$message->id)}}"><button type="button" class="btn btn-outline-info float-left" >Modifier</button></a>
+                                        @endcan
+                                        @can('delete', $message)
+                                            <form action="{{route('emails.destroy',$message->id)}}" method="post" class="float-left">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+                                                @endcan
                                         </form>
                                     </td>
                                 </tr>

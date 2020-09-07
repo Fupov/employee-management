@@ -34,7 +34,7 @@ class MessagesPolicy
      */
     public function view(User $user, Messages $messages)
     {
-        return $user->id === $messages->to_id;
+        return $user->id === $messages->to_id ;
     }
 
     /**
